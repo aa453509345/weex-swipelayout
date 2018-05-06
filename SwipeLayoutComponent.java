@@ -1,9 +1,9 @@
+
 package com.benmu.wx;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
-
 import com.alibaba.weex.plugin.annotation.WeexComponent;
 import com.daimajia.swipe.SwipeLayout;
 import com.taobao.weex.WXSDKInstance;
