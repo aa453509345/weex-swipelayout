@@ -6,6 +6,8 @@ import android.util.Log;
 import com.benmu.framework.BMInitConfig;
 import com.benmu.framework.BMWXApplication;
 import com.benmu.framework.BMWXEngine;
+import com.taobao.weex.WXSDKEngine;
+import com.taobao.weex.common.WXException;
 import com.taobao.weex.utils.FontDO;
 
 import java.io.File;
@@ -25,6 +27,14 @@ public class App extends BMWXApplication implements Serializable{
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+        try {
+            WXSDKEngine.registerComponent("bottom-view", SwipeBottomComponent.class);
+            WXSDKEngine.registerComponent("swipe-layout", SwipeLayoutComponent.class);
+            WXSDKEngine.registerComponent("surface-view", SwipeSurfaceComponent.class);
+
+        } catch (WXException e) {
+            e.printStackTrace();
+        }
     }
 
 }

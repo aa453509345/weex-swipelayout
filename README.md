@@ -1,33 +1,36 @@
 ### Usage
 #### template
-`
+ 
+```
 <swipe-layout style="width:750;height:200;background-color:red" :ref="'item_${index}'">
         <bottom-view style="width:300;height:200;background-color:green" dragEdge="left">
-            <text>bottom</text>
+        <text>bottom</text>
         </bottom-view>
-
        <bottom-view style="width:300;height:200;background-color:yellow" dragEdge="right" @click="bottomClick">
             <text>bottom</text>
         </bottom-view>
-
         <surface-view style="width:750;height:200;background-color:pink" @click="surfaceClick">
             <text>shdlsajkldkasldjklas</text>
         </surface-view>
     </swipe-layout>
-`
-  swipe-layout滑动组建父组件 其中只能包含两种子标签  bottom-view:隐藏的部分 surface-view 默认展示的部分
-  注:子组件在swipe-layout中的顺序 必须surface-view在最后，bottom-view在surface-view之前，一个surface-view可以配合多个bottom-view
+```
+##### swipe-layout是滑动父组件 其中只能包含两种子标签  bottom-view（隐藏的部分） surface-view （默认展示的部分）
+      注:子组件在swipe-layout中的顺序 必须surface-view在最后，bottom-view在surface-view之前，一个surface-view可以配合多个bottom-view
 
 #### bottom-view
-##### dragEdge 表示bottom-view 拖拽方向  支持参数：right left top bottom
+##### 属性：dragEdge 
+    表示bottom-view 拖拽方向  支持参数：right left top bottom
 
 #### swipe-layout
-##### openEdge(params:String)  打开指定的bottom-view  参数支持 right left top bottom
-`openEdge('right')`
-#### close() 关闭打开的swipe-layout
+##### 方法 openEdge(params:String)  
+    打开指定的bottom-view  参数支持 right left top bottom 例如：openEdge('right')即为打开右边的bottom-view
+#### 方法close() 
+    关闭swipe-layout
 
-#### Example 简单使用 将此段代码复制到eros项目中 即可查看效果
-`<template>
+#### Example 
+    简单使用 将此段代码复制到eros项目中 即可查看效果
+```
+<template>
     <div>
         <div @click="open">
             <text>OPEN</text>
@@ -82,9 +85,20 @@ export default {
     },
 }
 </script>
-`
+```
 #### Import 引入方法
 1. 将SwipeSurfaceComponent SwipeLayoutComponent SwipeBottomComponent 放入app目录下对应位置
-2. 在app/build.gradle中添加如下依赖:
+2. 在App中添加如下代码
+```
+  try {
+            WXSDKEngine.registerComponent("bottom-view", SwipeBottomComponent.class);
+            WXSDKEngine.registerComponent("swipe-layout", SwipeLayoutComponent.class);
+            WXSDKEngine.registerComponent("surface-view", SwipeSurfaceComponent.class);
+
+        } catch (WXException e) {
+            e.printStackTrace();
+        }
+```
+3. 在app/build.gradle中添加如下依赖:
 `compile "com.daimajia.swipelayout:library:1.2.0@aar"`
-3. 点击右上角Sync Now ，检查无报错即可。
+4. 点击右上角Sync Now ，检查无报错即可。

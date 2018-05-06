@@ -1,10 +1,10 @@
-
 package com.benmu.wx;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.FrameLayout;
+
 import com.alibaba.weex.plugin.annotation.WeexComponent;
 import com.daimajia.swipe.SwipeLayout;
 import com.taobao.weex.WXSDKInstance;
@@ -15,7 +15,6 @@ import com.taobao.weex.ui.component.WXVContainer;
 /**
  * Created by Carry on 2018/5/5.
  */
-@WeexComponent(names = "bottom-view")
 public class SwipeBottomComponent extends WXVContainer<FrameLayout> {
     private FrameLayout mBottom;
     private String mDragEdge;
