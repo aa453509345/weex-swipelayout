@@ -102,3 +102,5 @@ export default {
 3. 在app/build.gradle中添加如下依赖:
 `compile "com.daimajia.swipelayout:library:1.2.0@aar"`
 4. 点击右上角Sync Now ，检查无报错即可。
+
+#### 效果查看swipe.gif
