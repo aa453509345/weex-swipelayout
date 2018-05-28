@@ -191,7 +191,7 @@ export default {
 
 2.wxc-cell时weex-ui的一个组件，内部消费了事件，但在本例中，需要监听整个surface-view的点击长按双击事件，故将forceTouch="true"。
 
-#### 集成方式
+#### 集成方式
 1.在app/build.gradle中添加如下依赖:
 `compile "com.daimajia.swipelayout:library:1.2.0@aar"`(如上次已有，跳过)
 
@@ -213,7 +213,8 @@ export default {
 
 4.点击右上角Sync Now ，检查无报错即可。
 
-#### Demo代码
+
+#### Demo代码
 ```
 <template>
     <div>
