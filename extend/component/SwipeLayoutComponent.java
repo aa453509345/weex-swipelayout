@@ -1,4 +1,4 @@
-package com.benmu.wx;
+package com.benmu.wx.extend.component;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

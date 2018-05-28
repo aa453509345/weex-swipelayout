@@ -1,11 +1,9 @@
-package com.benmu.wx;
+package com.benmu.wx.extend.component;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.FrameLayout;
-
-import com.alibaba.weex.plugin.annotation.WeexComponent;
 import com.daimajia.swipe.SwipeLayout;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.dom.WXDomObject;
