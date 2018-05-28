@@ -188,12 +188,15 @@ export default {
 ```
 该例中请注意 
 1.surface-view本身是一个内部由滑动控件实现的组件，本身需要消费事件，如果将div-gesture作为    surface-view的父组件，会造成手势冲突。所以div-gesture最好作为滑动控件的子组件
+
 2.wxc-cell时weex-ui的一个组件，内部消费了事件，但在本例中，需要监听整个surface-view的点击长按双击事件，故将forceTouch="true"。
 
 #### 集成方式
 1.在app/build.gradle中添加如下依赖:
 `compile "com.daimajia.swipelayout:library:1.2.0@aar"`(如上次已有，跳过)
+
 2.将extend包下所有的类copy
+
 3. 在App中添加如下代码(直接替换之前的)
 ```
      try {
@@ -207,6 +210,7 @@ export default {
             e.printStackTrace();
         }
 ```
+
 4.点击右上角Sync Now ，检查无报错即可。
 
 #### Demo代码
