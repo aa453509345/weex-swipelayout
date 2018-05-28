@@ -107,14 +107,14 @@ export default {
 
 #### drag-list
     可拖拽条目的list 继承list所有现有功能
-##### 拓展属性
+#####拓展属性
 ##### 1.draggable {bool}
     drag-list是否开启拖拽功能 默认值为false
 ##### 2.dragTriggerType{string}
     dragTriggerType表示触发拖拽的方式，目前支持两种方式'pan'和'longpress'
-    当dragTriggerType=longpress时,长按列表条目触发拖拽事件
-    当dragTriggerType=pan时，表示拖拽指定组件时触发拖拽。使用pan模式时，需要在list<cell>中的任意你需要子组件添加属性dragAnchor="true",才能生效。带有dragAnchor属性的标签即为触发拖拽的锚点。
- 
+    当dragTriggerType=longpress时,长按列表条目触发拖拽事件
+    当dragTriggerType=pan时，表示拖拽指定组件时触发拖拽。使用pan模式时，需要在list<cell>中的任意你需要子组件添加属性dragAnchor="true",才能生效。带有dragAnchor属性的标签即为触发拖拽的锚点。
+
 ```
  <cell v-for="(num, index) in arr" :key="index"  @click="cellClick">
                 <div>
@@ -137,21 +137,21 @@ export default {
                 </swipe-layout>
                 </div>
 ```
-以当前cell为例,其中image被dragAnchor="true",即当触摸image标签时触发拖拽事件
+以当前cell为例,其中image被dragAnchor="true",即当触摸image标签时触发拖拽事件
 
 ##### vibrate{bool}
     拖拽开始时是否震动反馈 默认值为true
 
 ##### 拓展事件
 ##### dragstart
-    drag-list在拖拽开始时的事件回调
+    drag-list在拖拽开始时的事件回调
     params:
     {
-        fromIndex:条目原本的index
-        timestamp时间戳
+        fromIndex:条目原本的index
+        timestamp:时间戳
     }
 ##### dragend
-    drag-list在拖拽结束时的事件回调
+    drag-list在拖拽结束时的事件回调
     params:
     {
         fromIndex:条目原本的index
